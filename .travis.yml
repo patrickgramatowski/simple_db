@@ -1,4 +1,0 @@
-language: ruby
-
-ruby:
- - "2.7.1"
