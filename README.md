@@ -2,15 +2,15 @@
 ## Introduction
 Simple database class built with Ruby.
 ### Usage
-Create a instance of the Db class
+Create a instance of the Db class  
 <code>
-db = Db.new<br/>
-then you are free to use whole bunch of methods e.g.<br/>
-db.set("SET A 10)" # => sets A 10\
-db.get("GET A") # => 10\
-db.count("COUNT 10") # => counts amount of values 10 in that case it'd be 1\
-db.delete("DELETE A") # => deletes A if we do db.get("GET A") # => NULL\
-db.begin_sess # creates a session (session-[number].txt file)\
+db = Db.new  
+then you are free to use whole bunch of methods e.g.  
+db.set("SET A 10)" # => sets A 10  
+db.get("GET A") # => 10  
+db.count("COUNT 10") # => counts amount of values 10 in that case it'd be 1  
+db.delete("DELETE A") # => deletes A if we do db.get("GET A") # => NULL  
+db.begin_sess # creates a session (session-[number].txt file)  
 db.rollback # => deletes the session and opens the previous one\
 db.open_sess("OPEN SESSION 2") # => opens session-2.txt\
 db.commit # => deletes all the files beside the file we're in, changes the name of the file to session-1
