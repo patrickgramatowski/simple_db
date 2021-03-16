@@ -3,8 +3,7 @@
 Simple database class built with Ruby.
 ### Usage
 Create a instance of the Db class  
-<pre><code>
-db = Db.new  
+<pre><code>db = Db.new  
 then you are free to use whole bunch of methods e.g.  
 db.set("SET A 10)" # => sets A 10  
 db.get("GET A") # => 10  
@@ -23,15 +22,13 @@ NOTE draw_gph take just an array of 3 sessions and 1 variable e.g. ("A")!
 
 draw_gph method example  
 
-
-db = Db.new  
+<pre><code>db = Db.new  
 db.set("SET A 10")  
 db.begin_sess  
 db.set("SET A 11")  
 db.begin_sess  
 db.set("SET A 12")  
 
-db.draw_gph([1,2,3], "A") # =>  
-
+db.draw_gph([1,2,3], "A") # =></code></pre>
 
 ![111](https://user-images.githubusercontent.com/63557278/111360908-9730ca80-868d-11eb-8b8e-6edc76dd01b0.png)
