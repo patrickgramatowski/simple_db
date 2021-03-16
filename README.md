@@ -7,7 +7,7 @@ Create a instance of the Db class
 then you are free to use whole bunch of methods e.g.  
 db.set("SET A 10)" # => sets A 10  
 db.get("GET A") # => 10  
-db.count("COUNT 10") # => counts amount of values 10 in that case it'd be 1  
+db.count("COUNT 10")</code> # => counts amount of values 10 in that case it'd be 1  
 db.delete("DELETE A") # => deletes A if we do db.get("GET A") # => NULL  
 db.begin_sess # creates a session (session-[number].txt file)  
 db.rollback # => deletes the session and opens the previous one  
