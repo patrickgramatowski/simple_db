@@ -3,7 +3,7 @@
 Simple database class built with Ruby.
 ### Usage
 NOTE! database.rb has to be alone in the db dir, because <code>Dir["**/*"].length</code> was used few times!! The only files which can be there are session.txt!  
-Create a instance of the Db class  
+Create an instance of the Db class  
 <pre><code>db = Db.new</code></pre> 
 then you are free to use whole bunch of methods e.g.  
 <pre><code>db.set("SET A 10") # => sets A 10  
