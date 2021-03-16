@@ -21,6 +21,7 @@ NOTE draw_gph take just an array of 3 sessions and 1 variable e.g. ("A")!
 </code>
 
 draw_gph method example
+
 <code>
 db = Db.new
 db.set("SET A 10")
@@ -53,4 +54,6 @@ db.draw_gph([1,2,3], "A") # =>
 
 Session number:1 | Value: 10 - a
 Session number:2 | Value: 11 - o
-Session number:3 | Value: 12 - e</code>
+Session number:3 | Value: 12 - e
+
+</code>
