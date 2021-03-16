@@ -2,10 +2,10 @@
 ## Introduction
 Simple database class built with Ruby.
 ### Usage
-Create a instance of the Db class\
+Create a instance of the Db class
 <code>
-db = Db.new\
-then you are free to use whole bunch of methods e.g.\
+db = Db.new<br/>
+then you are free to use whole bunch of methods e.g.<br/>
 db.set("SET A 10)" # => sets A 10\
 db.get("GET A") # => 10\
 db.count("COUNT 10") # => counts amount of values 10 in that case it'd be 1\
