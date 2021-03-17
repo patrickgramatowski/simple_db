@@ -15,7 +15,8 @@ db.rollback # => deletes the session and opens the previous one
 db.open_sess("OPEN SESSION 2") # => opens session-2.txt  
 db.commit # => deletes all the files beside the file we're in, changes the name of the file to session-1  
 db.delete_sess("DELETE SESSION 2") # => deletes session-2  
-db.delete_multiply([1,2,3]) # => deletes array of sessions, needs to confirm it  
+db.delete_multiply([1,2,3]) # => deletes array of sessions, needs to confirm it
+db.get_all # => get all values at current session  
 db.draw_gph([1,2,3], "A") # => draws a graph which includes all values of "A" (in that case) from sessions [1,2,3] and represents it as a graph 
 </code></pre>
 NOTE draw_gph does take just an array of 3 sessions and 1 variable e.g. ("A")!  
