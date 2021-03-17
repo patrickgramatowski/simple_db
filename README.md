@@ -1,6 +1,6 @@
 # Simple Database built with Ruby 2.7
 ## Introduction
-Simple database class built with Ruby.
+Simple database class built with pure Ruby (no games).
 ### Usage
 NOTE! database.rb has to be alone in the lib dir, because <code>Dir["**/*"].length</code> was used few times!! The only files which can be there are session.txt!  
 Create an instance of the Db class  
