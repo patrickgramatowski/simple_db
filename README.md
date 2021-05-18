@@ -17,8 +17,8 @@ db.commit # => deletes all the files beside the file we're in, changes the name 
 db.delete_sess("DELETE SESSION 2") # => deletes session-2  
 db.delete_multiply([1,2,3]) # => deletes array of sessions, needs to confirm it
 db.take_all # => get all values at current session  
-**Important don't use it now!** db.draw_gph([1,2,3], "A") # => draws a graph which includes all values of "A" (in that case) from sessions [1,2,3] and represents it as a graph 
 </code></pre>
+**Important don't use it now!** db.draw_gph([1,2,3], "A") # => draws a graph which includes all values of "A" (in that case) from sessions [1,2,3] and represents it as a graph 
 NOTE draw_gph does take just an array of 3 sessions and 1 variable e.g. ("A")!  
   
 
