@@ -2,7 +2,7 @@
 ## Introduction
 Simple database class built with pure Ruby (no games).
 ### Usage
-NOTE! database.rb has to be alone in the lib dir, because <code>Dir["**/*"].length</code> was used few times!! The only files which can be there are session.txt!  
+NOTE! database.rb has to be alone in the lib/db_main dir, because <code>Dir["**/*"].length</code> was used few times!! The only files which can be there are session.txt!  
 Create an instance of the Db class  
 <pre><code>db = Db.new</code></pre> 
 then you are free to use whole bunch of methods e.g.  
@@ -16,8 +16,8 @@ db.open_sess("OPEN SESSION 2") # => opens session-2.txt
 db.commit # => deletes all the files beside the file we're in, changes the name of the file to session-1  
 db.delete_sess("DELETE SESSION 2") # => deletes session-2  
 db.delete_multiply([1,2,3]) # => deletes array of sessions, needs to confirm it
-db.get_all # => get all values at current session  
-db.draw_gph([1,2,3], "A") # => draws a graph which includes all values of "A" (in that case) from sessions [1,2,3] and represents it as a graph 
+db.take_all # => get all values at current session  
+**Important don't use it now!** db.draw_gph([1,2,3], "A") # => draws a graph which includes all values of "A" (in that case) from sessions [1,2,3] and represents it as a graph 
 </code></pre>
 NOTE draw_gph does take just an array of 3 sessions and 1 variable e.g. ("A")!  
   
