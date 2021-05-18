@@ -1,0 +1,108 @@
+=begin
+  # frozen_string_literal: true
+
+  require_relative "./session"
+
+  # Class comment
+  module Graph
+    def initialize
+      @session = Session.new
+    end
+
+    def method_missing(m, *args)
+      if @session.respond_to?(m)
+        @session.send(m, *args)
+      else
+        self.send(m, *args)
+      end
+    end
+    # draw a graph command
+    # args: array of sessions (max 4), elements to compare (max 3), 100% - x?
+    def draw_gph(ar, unit)
+      if File.exist?('session-1.txt')
+
+        $ar_values = []
+
+        ar.each do |i|
+          open_sess("OPEN SESSION #{i}")
+          $ar_values << get("GET #{unit}")
+        end
+
+        $ar_values = $ar_values.flatten.reject do |x|
+          x.nil? || x.to_i.zero?
+        end
+
+        $ar_values = $ar_values.map(&:to_i)
+
+        # array block background
+        g_back = []
+        # left column (heigh)
+
+        15.times do
+          g_back.push((' ' * 20).split('').unshift('*'))
+          # ["*"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "]
+        end
+
+        b_bottom = ('*' * 21).split('')
+        g_back.unshift b_bottom
+
+        # drawing lambda (placing 'a', 'o', 'e' on graph)
+        graph_data = lambda do |x, l, i, z = 0|
+          (1..i).each do |y|
+            g_back[y][x] = l
+          end
+
+          if z != 0
+            (0..z).each do |m|
+              m = '+'
+              g_back[y + 1][x] = m
+            end
+          end
+        end
+
+        # use lambda for each value of arrya of values
+        # and asign the args (x,l,i and z if requeired)
+        # p $ar_values
+        $ar_values.each_with_index do |v, ind|
+          z = 0
+          if v.even?
+            i = v / 2
+          else
+            i = v / 2
+            z = v % 2
+          end
+          x = ind + 2
+          l = case x
+              when 2
+                'a'
+              when 3
+                'o'
+              when 4
+                'e'
+              else
+                'ERROR'
+              end
+          graph_data.call(x, l, i, z)
+        end
+
+        # reverse graph
+        g_back.reverse!
+
+        # printing graph
+        g_back.each { |x| puts x.join(' ') }
+
+        # some info about graph
+        puts ''
+        puts "'aoe' = 2 units"
+        puts "'+' = 1 unit"
+        puts ''
+        puts "Session number:#{ar[0]} | Value: #{$ar_values[0]} - a"
+        puts "Session number:#{ar[1]} | Value: #{$ar_values[1]} - o"
+        puts "Session number:#{ar[2]} | Value: #{$ar_values[2].nil? ? 'No value' : $ar_values[2]} - e"
+        puts ''
+      else
+        puts 'There is no data and files to draw a graph from, create some and try again!'
+      end
+    end
+  end
+=end

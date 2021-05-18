@@ -27,3 +27,6 @@ Metrics/ClassLength:
 
 Naming/MethodParameterName:
   Enabled: false
+
+Style/MissingRespondToMissing:
+  Enabled: false

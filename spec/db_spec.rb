@@ -1,27 +1,30 @@
 # frozen_string_literal: true
 
-require "database"
+require_relative "../lib/db_main/database"
 
 RSpec.describe Db do
-  describe Db do
+  describe "#get" do
     before do
-      @db = Db.new
-      @db.set("SET A 10")
+      described_class.new.set("SET A 10")
     end
-
-    describe ".get" do
-      context "given input 'GET A 10'" do
-        it "returns value of 10" do
-          expect(@db.get("GET A 10")).to eql(%w[A 10])
-        end
+    context "given input 'GET A 10'" do
+      let(:expected) { "10" }
+      let!(:get) { subject.get("GET A") }
+      it "returns value of 10" do
+        expect(get).to include(expected)
       end
     end
+  end
 
-    describe ".count" do
-      context "given input 'COUNT 10'" do
-        it "returns value of 1" do
-          expect(@db.count("COUNT 10")).to eql(nil)
-        end
+  describe "#count" do
+    before do
+      described_class.new.set("SET A 10")
+    end
+    context "given input 'COUNT 10'" do
+      let(:expected) { 1 }
+      let(:count) { subject.count("COUNT 10") }
+      it "returns value of 1" do
+        expect(count).to eql(expected)
       end
     end
   end
